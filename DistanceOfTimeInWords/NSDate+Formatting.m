@@ -50,7 +50,7 @@
 }
 
 - (NSString *)distanceOfTimeInWords:(NSDate *)date {
-  NSString *Ago      = NSLocalizedString(@"ago", @"Denotes past dates");
+  NSString *Ago      = NSLocalizedString(@"", @"Denotes past dates");
   NSString *FromNow  = NSLocalizedString(@"from now", @"Denotes future dates");
   NSString *LessThan = NSLocalizedString(@"Less than", @"Indicates a less-than number");
   NSString *About    = NSLocalizedString(@"About", @"Indicates an approximate number");
@@ -58,8 +58,8 @@
   NSString *Almost   = NSLocalizedString(@"Almost", @"Indicates an approaching number");
   //NSString *Second   = NSLocalizedString(@"second", @"One second in time");
   NSString *Seconds  = NSLocalizedString(@"seconds", @"More than one second in time");
-  NSString *Minute   = NSLocalizedString(@"minute", @"One minute in time");
-  NSString *Minutes  = NSLocalizedString(@"minutes", @"More than one minute in time");
+  NSString *Minute   = NSLocalizedString(@"min", @"One minute in time");
+  NSString *Minutes  = NSLocalizedString(@"mins", @"More than one minute in time");
   NSString *Hour     = NSLocalizedString(@"hour", @"One hour in time");
   NSString *Hours    = NSLocalizedString(@"hours", @"More than one hour in time");
   NSString *Day      = NSLocalizedString(@"day", @"One day in time");
@@ -166,7 +166,7 @@
   if ([modifier length] > 0) {
     modifier = [modifier stringByAppendingString:@" "];
   }
-  return [NSString stringWithFormat:@"%@%d %@ %@", modifier, number, measure, direction];
+  return [[NSString stringWithFormat:@"%@%d %@ %@", modifier, number, measure, direction] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 @end
