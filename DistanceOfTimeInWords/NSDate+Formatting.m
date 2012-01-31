@@ -96,6 +96,7 @@
         case 10 ... 19:
           number = 20;
           modifier = LessThan;
+          break;
         case 20 ... 39:
           number = 30;
           modifier = About;
